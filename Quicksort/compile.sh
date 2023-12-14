@@ -20,4 +20,8 @@ case $options in
 		cc -g -Wall -Wpedantic -Werror -Wextra *.c
 		gdb ./a.out
 		;;
+	# remove executable
+	"c")
+		rm a.out
+		;;
 esac
