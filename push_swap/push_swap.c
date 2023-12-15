@@ -23,22 +23,22 @@ void ss(int stack_a[], int stack_b[], int length)
 	sb(stack_b, length);
 }
 
-void pa(int stack_a[], int stack_b[], int length)
-{
-	if (isEmpty(stack_b, length) == 1)
-		return ;
+// void pa(int stack_a[], int stack_b[], int length)
+// {
+// 	if (isEmpty(stack_b, length) == 1)
+// 		return ;
 
-	// shift(stack_a, down, 1)
-	// stack_a[0] = stack_b[0]
-	// pop(stack_b)
-}
+// 	// shift(stack_a, down, 1)
+// 	// stack_a[0] = stack_b[0]
+// 	// pop(stack_b)
+// }
 
-void pb(int stack_b[], int stack_a[], int length)
-{
-	if (isEmpty(stack_a, length) == 1)
-		return ;
+// void pb(int stack_b[], int stack_a[], int length)
+// {
+// 	if (isEmpty(stack_a, length) == 1)
+// 		return ;
 
-	// shift(stack_b, down, 1)
-	// stack_b[0] = stack_a[0]
-	// pop(stack_a)
-}
+// 	// shift(stack_b, down, 1)
+// 	// stack_b[0] = stack_a[0]
+// 	// pop(stack_a)
+// }

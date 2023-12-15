@@ -12,5 +12,7 @@
 	void 	printArr(int arr[], int length);
 	void 	printStacks(int stack_a[], int stack_b[], int length);
 	void 	swap(int* a, int* b);
+	void	push(int stack[], int element, int length);
+	void	pop(int stack[], int element, int length);
 
 #endif

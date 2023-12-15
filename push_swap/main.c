@@ -14,4 +14,12 @@ int main(void)
 	printf("Before:\n");
 	printStacks(stack_a, stack_b, length);
 	printf("\n");
+
+	printf("After:\n");
+	//push(stack_a, 69, length);
+	printStacks(stack_a, stack_b, length);
+	printf("\n");
+
+	free(stack_a);
+	free(stack_b);
 }
