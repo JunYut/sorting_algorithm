@@ -21,7 +21,7 @@ case $options in
 		gdb ./a.out
 		;;
 	# remove executable
-	"c")
+	"r")
 		rm a.out
 		;;
 esac

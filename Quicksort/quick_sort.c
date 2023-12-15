@@ -9,12 +9,12 @@
 	if (start >= end):
 		exit
 
-	last = end - 1
-	pivotVal = arr[last]
+	end = end - 1
+	pivotVal = arr[end]
 	pivotPos = start
 	i		 = start
 
-	while (i < last):
+	while (i < end):
 		if (arr[i] <= pivotVal):
 			++pivotPos
 			if (arr[pivotPos] > arr[i]):
@@ -22,9 +22,9 @@
 		++i
 	
 	++i
-	swap(arr[pivotPos + 1], arr[last])
+	swap(arr[pivotPos + 1], arr[end])
 	quicksort(arr, start, pivotPos - 1)
-	quicksort(arr, pivotPos + 1, last)
+	quicksort(arr, pivotPos + 1, end)
 */
 
 static void swap(int* num1, int* num2)
@@ -32,6 +32,7 @@ static void swap(int* num1, int* num2)
 	int temp = *num1;
 	*num1 = *num2;
 	*num2 = temp;
+	printf("swap: %d, %d\n", *num1, *num2);	//debug
 }
 
 void quick_sort(int arr[], int start, int end)
@@ -39,21 +40,30 @@ void quick_sort(int arr[], int start, int end)
 	if (start >= end)
 		return ;
 
-	int first		= start - 1;
-	int last 		= end - 1;
-	int pivotVal 	= arr[last];
-	int pivotPos	= first;
+	printf("arr: ");	//debug
+	for (int i = start; i < end; ++i)	//debug
+		printf("%d ", arr[i]);	//debug
+	printf("\n");	//debug
+
+	int pivotVal 	= arr[end];
+	int pivotPos	= start - 1;
 
 	for (int i = start; i < end; ++i)
 	{
 		if (arr[i] <= pivotVal)
 		{
+			printf("%d <= %d\n", arr[i], pivotVal);	//debug
 			++pivotPos;
-			swap(&arr[pivotPos], &arr[i]);
+			if (arr[pivotPos] > arr[i])
+			{
+				printf("%d > %d\n", arr[pivotPos], arr[i]);	//debug
+				swap(&arr[pivotPos], &arr[i]);
+			}
 		}
 	}
 	
-	swap(&arr[pivotPos + 1], &arr[last]);
+	swap(&arr[pivotPos + 1], &arr[end]);
+	printf("Partitioning...\n");	//debug
 	quick_sort(arr, start, pivotPos - 1);
-	quick_sort(arr, pivotPos + 1, last);
+	quick_sort(arr, pivotPos + 1, end);
 }
