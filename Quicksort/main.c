@@ -12,7 +12,7 @@ int main(void)
 		printf("%d ", arr[i]);
 	printf("\n\n");
 
-	DEBUG("n", n - 1);
+	// DEBUG("n", n - 1);
 	quick_sort(arr, 0, n - 1);
 	
 	printf("After: ");
