@@ -1,0 +1,15 @@
+Stack:
+-------------------------------------------------------------------------------
+	- double-way linked list
+	- StackA.element[0] = StackA.head
+	- StackA.element[last + 1] = NULL
+	- StackB.element[0] = NULL	// empty stack
+	- StackB.head = StackB.element[0]
+
+Pop:
+-------------------------------------------------------------------------------
+	- StackA.element[1] = StackA.head
+
+Push:
+-------------------------------------------------------------------------------
+	- StackB.head = StackA.element[0]
