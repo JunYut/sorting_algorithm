@@ -1,19 +1,9 @@
-# include "stack.h"
+# include "linked-list.h"
 
-void traverse(Stack* stack)
+void add_node(struct node **head, int data)
 {
-	Stack* current = stack->top;
-	
-	while (current != NULL)
-	{
-		// Process current node
-		// ...
-		
-		current = current->next;
-	}
-}
-
-void insert(Stack* stack)
-{
-
+	struct node *new_node = (struct node *)malloc(sizeof(struct node));
+	new_node->data = data;
+	new_node->next = *head;
+	*head = new_node;
 }

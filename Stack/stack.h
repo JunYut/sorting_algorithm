@@ -3,17 +3,12 @@
 
 	# pragma once
 
-	# include <stddef.h>
+	# include "linked-list.h"
 
-	typedef struct Stack
+	typedef struct stack
 	{
-		int element;
-		struct Stack* top;
-		struct Stack* previous;
-		struct Stack* next;
-	} Stack;
-
-	void traverse(Stack* stack);
-	void insert(Stack* stack);
+		node *top;
+		size_t volume;
+	}	stack;
 
 # endif

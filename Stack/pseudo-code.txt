@@ -13,3 +13,40 @@ Pop:
 Push:
 -------------------------------------------------------------------------------
 	- StackB.head = StackA.element[0]
+
+TO-DO:
+-------------------------------------------------------------------------------
+1. Define a Node structure with the following fields:
+   - `value`: to store the value of the node.
+   - `prev`: a pointer to the previous node in the stack.
+   - `next`: a pointer to the next node in the stack.
+
+2. Define a Stack structure with the following fields:
+   - `head`: a pointer to the top node in the stack.
+   - `tail`: a pointer to the bottom node in the stack.
+
+3. Implement a function to create a new Node:
+   - Allocate memory for a new Node.
+   - Set the `value` of the Node.
+   - Set `prev` and `next` to NULL.
+
+4. Implement a function to create a new Stack:
+   - Allocate memory for a new Stack.
+   - Set `head` and `tail` to NULL.
+
+5. Implement the `push` operation:
+   - Create a new Node.
+   - If the Stack is not empty, set the `next` of the `head` to the new Node and the `prev` of the new Node to the `head`.
+   - Set the `head` of the Stack to the new Node.
+
+6. Implement the `pop` operation:
+   - If the Stack is not empty, set the `head` of the Stack to the `prev` of the current `head`.
+   - Free the memory of the popped Node.
+
+7. Implement a function to check if the Stack is empty:
+   - Return true if `head` is NULL, false otherwise.
+
+8. Implement a function to peek at the top value of the Stack:
+   - Return the `value` of the `head` Node.
+
+Remember to handle memory allocation and deallocation carefully to avoid memory leaks.
