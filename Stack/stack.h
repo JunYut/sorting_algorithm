@@ -3,12 +3,28 @@
 
 	# pragma once
 
-	# include "linked-list.h"
+	# include <stdlib.h>
+	# include <stdio.h>
+
+	typedef struct plate
+	{
+		int data;
+		struct plate *below;
+	}	plate;
 
 	typedef struct stack
 	{
-		node *top;
-		size_t volume;
+		plate *top;
+		plate *bottom;
 	}	stack;
+
+	void 	push(stack *s, int element);
+	void 	pop(stack *s);
+	void	removePlate(plate *plate);
+	void 	printStack(stack* s);
+	int		isEmpty(stack *s);
+	stack	*newStack(void);
+
+	void	checkMem(void *ptr);
 
 # endif

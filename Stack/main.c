@@ -9,21 +9,63 @@
 		- The top of the stack is the only place where insertion and removal operations can be performed.
 
 	TEST CASES:
-		1. Create a stack and see if the order of insertion.
-		2. and removal is correct.
+		1. Create a stack and see if the order of insertion is correct.
+		2. Create a stack and see if the order of removal is correct.
 */
 
 # include "stack.h"
 # include <stdlib.h>
 # include <stdio.h>
 
+# define LOG(x, i) printf("element[%d]: %s\n", i, x)
+# define DIVIDER printf("------------------------------------------------------------\n")
+
+void TEST_INSERTION(void);
+void TEST_REMOVAL(void);
+
 int main(void)
 {
-	stack *s = (stack *)malloc(sizeof(stack));
-	s->top = NULL;
-	s->volume = 0;
+	TEST_INSERTION();
+	TEST_REMOVAL();
+}
 
-	printf("Stack volume: %zu\n", s->volume);
+void TEST_INSERTION(void)
+{
+	printf("TEST_INSERTION:\n");
+	DIVIDER;
 
-	return 0;
+	stack *s = newStack();
+
+	printStack(s);
+	push(s, 404);
+	printStack(s);
+	for (int i = 0; i < 10; ++i)
+	{
+		push(s, i);
+		printStack(s);	printf("\n");
+	}
+
+	printf("TEST FINISHED\n");
+	DIVIDER;
+}
+
+void TEST_REMOVAL(void)
+{
+	printf("TEST_REMOVAL:\n");
+	DIVIDER;
+
+	stack *s = newStack();
+
+	printStack(s);
+	for (int i = 0; i < 10; ++i)
+		push(s, i);
+	printStack(s);	printf("\n");
+	for (size_t i = 0; i < 10; i++)
+	{
+		pop(s);
+		printStack(s);	printf("\n");
+	}
+
+	printf("TEST FINISHED");
+	DIVIDER;
 }
