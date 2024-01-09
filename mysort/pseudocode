@@ -1,0 +1,14 @@
+# mysort
+
+int[] mysort(int arr[], int size)
+{
+	convert arr to string array
+	sort string array base on digit_count(bytes)
+	int range = 0;
+	while (string array[range].bytes == string array[range + 1]. bytes) ++range;
+	for (int i = 0; i < range; ++i)
+	{
+		if (strArr[i])
+	}
+
+}
