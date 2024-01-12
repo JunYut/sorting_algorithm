@@ -44,7 +44,7 @@ void pop(stack *s)
 	removePlate(temp);		// free memory of the 'top plate'
 }
 
-/*
+/**
 	@brief 	This functions rotates the stack upwards by 1 plate, essentially making
 			plate #2 the 'top plate' and plate #1 the 'bottom plate'
 */
